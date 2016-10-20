@@ -100,7 +100,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="index.html" class="btn waves-effect waves-light col s12">Iniciar Sesión</a>
+            <a href="principal.htm" class="btn waves-effect waves-light col s12">Iniciar Sesión</a>
           </div>
         </div>
           <div class="row">
