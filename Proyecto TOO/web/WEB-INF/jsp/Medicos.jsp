@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
   <html>
@@ -8,11 +9,8 @@
         <c:url value="/resources/css/index.css" var="indexURL"/>
         <c:url value="/resources/css/ghpages-materialize.css" var="ghpagesURL"/>
         <c:url value="/resources/css/prism.css" var="primURL"/>
-        <c:url value="/resources/css/materialize.min.css" var="materializeURL"/>
-        <c:url value="/resources/css/materialize.min.css" var="materializeURL"/>
-        
-        
-    <meta charset="UTF-8">
+               
+    <!--<meta charset="UTF-8">-->
     <link rel="shortcut icon" href="${logoURL}">
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -24,7 +22,7 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Inicio</title>
+      <title>Médicos</title>
 </head>
 
    <body>
@@ -38,15 +36,16 @@
 
           <li><div class="divider"></div></li>
 
-          <li class="bold"><a href="Pacientes.html" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
-          <li class="bold"><a href="medico.html" class="waves-effect waves-teal"><i class="material-icons">book</i>MÃ©dicos</a></li>
+          <li class="bold"><a href="principal.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Inicio</a></li>
+          <li class="bold"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
+          <li class="bold active"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
 
-           <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">settings</i>Laboratoristas</a></li>
-            <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
-            <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
-            <li class="bold"><a href="Clinicas.html" class="waves-effect waves-teal"><i class="material-icons">create</i>ClÃ­nicas</a></li>
-            <li class="bold"><a href="login.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
+           <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">settings</i>Laboratoristas</a></li>
+            <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
+            <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
+            <li class="bold"><a href="clinicas.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Clínicas</a></li>
+            <li class="bold"><a href="index.htm" class="waves-effect waves-teclinicas.htmal"><i class="material-icons">create</i>Salir</a></li>
 
           </ul>
 </header>
@@ -72,15 +71,57 @@
   <!-- AGREGAR MEDICO-->
 
   <!-- Modal Trigger -->
+   <div class="row"></div>
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons left">person_add</i>Agregar Medico</a>
+  
+  
+  <!-- tabla de resultados -->
+  <div class="row"></div>
+  <div class="row"></div>
+<div class="container">
+<table class="highlight centered">
+        <thead>
+          <tr>
+              <th data-field="id">Nombres</th>
+              <th data-field="name">Apellidos</th>
+              <th data-field="price">Documento de identidad</th>
+              <th data-field="price">Fecha de nacimiento</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>051342-0</td>
+            <td>24/2/1998</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>6754315-1</td>
+            <td>24/2/1998</td>
+
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>6543245-7</td>
+            <td>24/2/1998</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+  
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Agregar Medico</h4>
     </div>
-
-
+      
+  
   <div class="row">
             <form class="col s12">
               <div class="row">
@@ -131,9 +172,9 @@
                 <div class="input-field col s6">
                         <select>
                           <option value="" disabled selected>Seleccionar Clinica</option>
-                          <option value="1">OpciÃ³n 1</option>
-                          <option value="2">OpciÃ³n 2</option>
-                          <option value="3">OpciÃ³n 3</option>
+                          <option value="1">Opción 1</option>
+                          <option value="2">Opción 2</option>
+                          <option value="3">Opción 3</option>
                         </select>
                         <label>Clinica Asignada</label>
 
@@ -171,24 +212,20 @@
 
                 <div class="input-field col s6">
                   <input id="password" type="text" class="validate">
-                  <label for="password">ContraseÃ±a</label>
+                  <label for="password">Contraseña</label>
               </div>
  
               </div>
               
               <!--Botones guardar/cancelar -->
-                <div class="row">
-                  <div class="col m6 offset-m6">
-                      <button class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>
-                          <a href="#!" class=" modal-action modal-close waves-effect #e53935 red darken-1 waves-red btn-flat white-text">Cancelar</a>
-                       </div>
-                </div>
+               <button class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>
+
+                 <a href="#!" class=" modal-action modal-close waves-effect #e53935 red darken-1 waves-red btn-flat white-text">Cancelar</a>
             </form>
           </div>
-
+  </div>
    <!-- FIN AGREGAR MEDICO-->
-
-
+   
 
 </main>
 
