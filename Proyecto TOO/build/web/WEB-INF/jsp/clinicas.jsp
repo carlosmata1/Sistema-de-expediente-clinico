@@ -71,12 +71,16 @@
   <!-- AGREGAR Clínica--> 
 
   <!-- Modal Trigger -->
+  <br>
+        <br>
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons left">person_add</i>Agregar Clínica</a>
 
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Agregar Clínica</h4>
+        
+        
+      <hr>4>Agregar Clínica</h4>
     </div>
 
 
