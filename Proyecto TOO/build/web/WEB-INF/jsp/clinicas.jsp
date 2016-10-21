@@ -80,7 +80,7 @@
     <div class="modal-content">
         
         
-      <hr>4>Agregar Clínica</h4>
+      <h4>Agregar Clínica</h4>
     </div>
 
 
