@@ -5,6 +5,7 @@
  */
 package controller;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +20,9 @@ import static org.springframework.web.servlet.mvc.method.annotation.MvcUriCompon
 public class controlador {
     
  @RequestMapping(value="/principal.htm",method=RequestMethod.GET)
-       public String principal(){
-           return "principal";
+       public String principal(HttpServletRequest req){
+           
+                return "principal";
        }
  @RequestMapping(value="/medicos.htm", method=RequestMethod.GET)
     public String medico(){

@@ -1,19 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html lang="en">
-<head>
-    <c:url value="/resources/css/materialize.min.css" var="materializeURL"/>
-    
-  <meta charset="UTF-8">
-  <link rel="shortcut icon" href="images/logo.png">
-  <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link rel="stylesheet" href="${materializeURL}"/>
-
-  <title>Inicio</title>
-</head>
+    <jsp:include page="head.jsp"/>
 <body>
 
 <!-- Inicio de la Barra de navegaciÃ³n
@@ -38,12 +26,11 @@
 
           <li><div class="divider"></div></li>
 
-          <li class="bold"><a href="Pacientes.html" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
+          <li class="bold"><a href="Pacientes.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
 
-           <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">settings</i>Laboratoristas</a></li>
-            <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
+            <li class="bold"><a href="enfermeras.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
             <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
             <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Clinicas</a></li>
             <li class="bold"><a href="login.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
