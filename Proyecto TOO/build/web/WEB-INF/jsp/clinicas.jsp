@@ -37,7 +37,7 @@
 
           <li><div class="divider"></div></li>
 
-          <li class="bold"><a href="Pacientes.html" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
+          <li class="bold"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="Medicos.html" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
 
