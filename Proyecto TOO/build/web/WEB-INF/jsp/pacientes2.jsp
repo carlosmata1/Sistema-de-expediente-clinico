@@ -76,6 +76,8 @@
 <!-- formulario en un modal -->
     <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>
+  <a href="crear.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Pacientes 2</a>
+  
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -92,7 +94,7 @@
         </div>
         <div class="input-field col s6">
 
-          <input id="lastName" type="tel" class="validate" required="">
+          <input id="lastName" type="text" class="validate" required="">
           <label for="lastName">Apellidos</label>
         </div>
       </div>
@@ -187,34 +189,37 @@
 
 
 <!-- tabla de resultados -->
-<br>
-<br>
-<br>
-<br>
+<a href="getAll.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Pacientes</a>
+<!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">book</i>Ver lista de pacientes</a>-->
 
-<div class="col m10 ">
-        <div class="card-panel teal"> Lista de pacientes</div>
-      </div>
-
+<div class ="row"></div>
 <div class="container">
 <table class="highlight centered">
         <thead>
           <tr>
-              <th data-field="id">Nombres</th>
-              <th data-field="name">Apellidos</th>
-              <th data-field="price">Documento de identidad</th>
-              <th data-field="price">Fecha de nacimiento</th>
+              <th data-field="id">ID </th>
+              <th data-field="name">Nombre</th>
+              <th data-field="price">Apellido</th>
+              <th data-field="price">Dirección</th>
+              <th data-field="price">Opciones</th>
           </tr>
         </thead>
 
+        <c:forEach items ="${listaPacientes}" var ="pac">
         <tbody>
           <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>051342-0</td>
-            <td>24/2/1998</td>
+            <td>${pac.idAfiliado}</td>
+            <td>${pac.nombre}</td>
+            <td>${pac.apellido}</td>
+            <td>${pac.direccion}</td>
+            
+            <td>
+            <a href="edit.htm?id=${pac.idAfiliado}">Editar </a>
+            <a href="remove.htm?id=${pac.idAfiliado}" onclick="return confirm('Are you sure?')"> Eliminar</a>
+            </td>
           </tr>
-          <tr>
+          
+<!--          <tr>
             <td>Alan</td>
             <td>Jellybean</td>
             <td>6754315-1</td>
@@ -226,11 +231,12 @@
             <td>Lollipop</td>
             <td>6543245-7</td>
             <td>24/2/1998</td>
-
-          </tr>
+          </tr>-->
+        
         </tbody>
+        </c:forEach>
       </table>
-
+    
 </div>
 </main>
 
