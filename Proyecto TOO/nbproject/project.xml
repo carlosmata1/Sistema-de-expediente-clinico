@@ -20,6 +20,9 @@
                 </library>
                 <library dirs="200">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
                     <file>${file.reference.ojdbc7.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -33,6 +36,7 @@
                 </library>
                 <library dirs="200">
                     <file>${file.reference.ojdbc6.jar}</file>
+<<<<<<< HEAD
 =======
                     <file>${file.reference.commons-beanutils-1.8.0.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
@@ -336,6 +340,8 @@
                 <library dirs="200">
                     <file>${file.reference.velocity-tools-2.0.jar}</file>
 >>>>>>> extra
+=======
+>>>>>>> origin/master
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>

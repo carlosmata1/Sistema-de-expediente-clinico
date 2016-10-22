@@ -1,24 +1,27 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <html lang="en">
+<<<<<<< HEAD
     <jsp:include page="head.jsp"/>
+=======
+    
+<head>
+    <c:url value="/resources/css/materialize.min.css" var="materializeURL"/>
+    <c:url value="/resources/images/Logo.png" var="logoURL"/>
+    
+  <!--<meta charset="UTF-8">-->
+  <link rel="shortcut icon" href="${logoURL}">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="${materializeURL}"/>
+
+  <title>Inicio</title>
+</head>
+>>>>>>> origin/master
 <body>
 
-<!-- Inicio de la Barra de navegaciÃ³n
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Pacientes</a></li>
-        <li><a href="badges.html">MÃ©dicos</a></li>
-        <li><a href="collapsible.html">Laboratoristas</a></li>
-        <li><a href="collapsible.html">ClÃ­nicas</a></li>
-        <li><a href="collapsible.html">Enfermeras</a></li>
-      </ul>
-    </div>
-  </nav>-->
 
-<!--Barra Lateral-->
 <header>
   <div class="container "><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
         <ul id="nav-mobile" class="side-nav fixed">
@@ -26,6 +29,7 @@
 
           <li><div class="divider"></div></li>
 
+<<<<<<< HEAD
           <li class="bold"><a href="Pacientes.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
@@ -34,6 +38,17 @@
             <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
             <li class="bold"><a href="ajustes_financieros.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Clinicas</a></li>
             <li class="bold"><a href="login.html" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
+=======
+          <li class="bold"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
+          <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
+
+
+           <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">settings</i>Laboratoristas</a></li>
+            <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
+            <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
+            <li class="bold"><a href="clinicas.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Clinicas</a></li>
+            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
+>>>>>>> origin/master
 
           </ul>
 </header>

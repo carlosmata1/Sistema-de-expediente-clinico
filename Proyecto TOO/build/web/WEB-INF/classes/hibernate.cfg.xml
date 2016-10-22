@@ -5,6 +5,7 @@
     <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
     <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+<<<<<<< HEAD
     <property name="hibernate.connection.username">system</property>
     <property name="hibernate.connection.password">Mujeres15</property>
     <mapping class="entidades.Clinica"/>
@@ -21,5 +22,11 @@
     <mapping class="entidades.Medico"/>
     <mapping class="entidades.Empleado"/>
     <mapping class="entidades.Especialidad"/>
+=======
+    <property name="hibernate.connection.username">Ale1</property>
+    <property name="hibernate.connection.password">1234</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="entity.Pacientes"/>
+>>>>>>> origin/master
   </session-factory>
 </hibernate-configuration>
