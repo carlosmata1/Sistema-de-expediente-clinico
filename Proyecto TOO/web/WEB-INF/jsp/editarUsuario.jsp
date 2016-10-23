@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"  %>
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
   <html>
@@ -24,7 +25,7 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Usuarios</title>
+      <title>Editar Usuarios</title>
 </head>
 
    <body>
@@ -39,7 +40,8 @@
           <li><div class="divider"></div></li>
 
           <li class="bold"><a href="principal.htm" class="waves-effect waves-teal"><i class="material-icons">home</i>Inicio</a></li>
-          <li class="bold active"><a href="" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
+
+          <li class="bold active"><a href="usuarios.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
           <li class="bold"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
@@ -74,45 +76,48 @@
   <br>
 
 
-<!-- formulario en un modal -->
-    <!-- Modal Trigger -->
-  <!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>-->
-  <a href="crearUsers.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Usuario</a>
-  
 <!-- tabla de resultados -->
 <a href="getAllUsuarios.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Usuarios</a>
 <!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">book</i>Ver lista de pacientes</a>-->
 
 <div class ="row"></div>
-<div class="container">
-<table class="highlight centered">
-        <thead>
-          <tr>
-              <th data-field="id">Nickname </th>
-              <th data-field="name">Contraseña</th>
-              <th data-field="price">Rol</th>
-              <th data-field="price">CodPersona</th>
-              <th data-field="price">Opciones</th>
-          </tr>
-        </thead>
-
-        <c:forEach items ="${listaUsuarios}" var ="pac">
-        <tbody>
-          <tr>
-            <td>${pac.nombreUsuario}</td>
-            <td>${pac.password}</td>
-            <td>${pac.codRol}</td>
-            <td>${pac.codPersona}</td>
-            
-            <td>
-            <a href="editUsers.htm?nombreUsuario=${pac.nombreUsuario}">Editar </a>
-            <a href="removeUsers.htm?nombreUsuario=${pac.nombreUsuario}" onclick="return confirm('Are you sure?')"> Eliminar</a>
-            </td>
-          </tr>        
-        </tbody>
-        </c:forEach>
-      </table>
+<div class="modal-content">
+<f:form action="updateUsers.htm" modelAttribute="Usuarios" method="POST">
     
+
+        <div class="row">
+       <div class="input-field col s4">
+        <label for="nickname">Nickname</label>
+          <input type="text" name="nombreUsuario" id="nicknameid" value="${p.nombreUsuario}"/>
+       </div>
+    
+       
+       <div class="input-field col s4">
+            <label for="password">Contraseña</label>
+          <input type="text" name="password" id="passwordid" value="${p.password}"/>
+       </div>
+    
+        <div class="input-field col s4">
+        <label for="rol">Rol</label>
+          <input type="text" name="codRol" id="codRolid" value="${p.codRol}"/>
+        </div> 
+            
+        </div>
+        
+  
+    <div class="row">
+        <div class="input-field col s6">
+
+          <input id="codPersona" name ="codPersona" type="text" value="${p.codPersona}">
+          <label for="codPersona">Código de Persona </label>
+        </div>
+      </div>
+    
+  <button class="btn waves-effect waves-light" type="submit" name="">Guardar Usuario
+<!--    <i class="material-icons right">send</i>-->
+  </button>
+    
+   </f:form>
 </div>
 </main>
 
@@ -137,5 +142,3 @@
 
 </body>
 </html>
-
-

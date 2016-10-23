@@ -41,6 +41,7 @@
           <li><div class="divider"></div></li>
 
           <li class="bold"><a href="principal.htm" class="waves-effect waves-teal"><i class="material-icons">home</i>Inicio</a></li>
+          <li class="bold"><a href="usuarios.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
           <li class="bold active"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
@@ -49,7 +50,7 @@
             <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
             <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
             <li class="bold"><a href="clinicas.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Clínicas</a></li>
-            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
+            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Cerrar Sesión</a></li>
 
           </ul>
 </header>
@@ -75,120 +76,6 @@
   <br>
 
 
-<!-- formulario en un modal -->
-    <!-- Modal Trigger -->
-    <!--<a class="waves-effe"redirect:getAll.html"ct waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>-->
-  <!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="crear.htm" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente 2</a>-->
-  
-  <!-- Modal Structure -->
-<!--<div id="modal1" class="modal">
-    <div class="modal-content">
-
-      <h4>Agregar paciente</h4>
-      <div class="divider"></div>
-      <div class="row">
-    <form class="col s12" action="#">
-      <div class="row">
-        <div class="input-field col s6">
-
-          <input id="name" type="text" class="validate" required="">
-          <label for="name">Nombres</label>
-        </div>
-        <div class="input-field col s6">
-
-          <input id="lastName" type="text" class="validate" required="">
-          <label for="lastName">Apellidos</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-
-           <input type="date" class="datepicker" id="burnDate" required="">
-           <label for="burnDate">Fecha de nacimiento</label>
-        </div>
-        <div class="input-field col s6">
-
-          <input id="icon_telephone" type="tel" class="validate" required="">
-          <label for="icon_telephone">Dirección</label>
-        </div>
-      </div>
-
-      <div class="row">
-         <div class="input-field col s3">
-            <input id="document" type="text" length="10" required="">
-            <label for="document">Identificación </label >
-          </div>
-
-              <div class="input-field col s3">
-              <select required="Falta este campo">
-                <option value="" disabled selected>Elige una opción </option>
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
-
-              </select>
-           <label>Género </label>
-              </div>
-
-        <div class="input-field col s6">
-
-          <input id="profecion" type="tel" class="validate" required="">
-          <label for="profecion">Profecion u oficio</label>
-        </div>
-
-      </div>
-        <div class="row">
-        <div class="input-field col s6">
-
-          <input id="padre" type="text" class="validate" required="">
-          <label for="padre">Nombre del padre</label>
-        </div>
-        <div class="input-field col s6">
-
-          <input id="madre" type="tel" class="validate" required="">
-          <label for="madre">Nombre de la madre</label>
-        </div>
-      </div>
-      <div class="row">
-      <div class="input-field col s6">
-              <select required="Falta este campo">
-                <option value="" disabled selected>Elige una opción </option>
-                <option value="1">Casado</option>
-                <option value="2">Soltero</option>
-                <option value="3">Acompañado </option>s
-                <option value="4">Viudo </option>
-
-
-
-              </select>
-           <label>Estado civil </label>
-              </div>
-
-        <div class="input-field col s6">
-
-          <input id="esposo" type="text" class="validate" >
-          <label for="esposo">Nombre del conyuge</label>
-        </div>
-
-      </div>
-
-
-  <button class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>
-
-    <a href="#!" class=" modal-action modal-close waves-effect #e53935 red darken-1 waves-red btn-flat white-text">Cancelar</a>
-
-    </form>
-  </div>
-
-
-
-    </div>
-    <div class="modal-footer">
-
-    </div>
-  </div>-->
-
-
 
 <!-- tabla de resultados -->
 <a href="getAll.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Pacientes</a>
@@ -196,7 +83,7 @@
 
 <div class ="row"></div>
 <div class="modal-content">
-<f:form action="update.htm" modelAttribute="Pacientes">
+    <f:form action="update.htm" modelAttribute="Pacientes" method="POST">
     
 
         <div class="row">
@@ -265,37 +152,9 @@
           <label for="madre">Nombre de la madre</label>
         </div>
       </div>
-<!--      <div class="row">
-      <div class="input-field col s6">
-              <select>
-                <option value="" disabled selected>Elige una opción </option>
-                <option value="1">Casado</option>
-                <option value="2">Soltero</option>
-                <option value="3">Acompañado </option>
-                <option value="4">Viudo </option>
 
-
-
-              </select>
-           <label>Estado civíl </label>
-              </div>
-
-        <div class="input-field col s6">
-
-          <input id="esposo" name ="conyuge" type="text" class="validate" >
-          <label for="esposo">Nombre del conyuge</label>
-        </div>
-
-      </div>-->
-   
-    <!--<button class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>-->
-       
-     
-    
-       
-  <button class="btn waves-effect waves-light" type="submit" name="">Guardar Paciente
-<!--    <i class="material-icons right">send</i>-->
-  </button>
+      
+  <button class="btn waves-effect waves-light" type="submit" name="">Guardar Paciente</button>
         
        <input type="submit" value="Guardar Paciente"/>
    </f:form>

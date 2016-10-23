@@ -25,7 +25,7 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Crear Pacientes</title>
+      <title>Crear Usuarios</title>
 </head>
 
    <body>
@@ -40,6 +40,8 @@
           <li><div class="divider"></div></li>
 
           <li class="bold"><a href="principal.htm" class="waves-effect waves-teal"><i class="material-icons">home</i>Inicio</a></li>
+
+          <li class="bold active"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
           <li class="bold active"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
@@ -48,7 +50,7 @@
             <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
             <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
             <li class="bold"><a href="clinicas.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Clínicas</a></li>
-            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
+            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Cerrar Sesión</a></li>
 
           </ul>
 </header>
@@ -75,42 +77,43 @@
 
 
 <!-- tabla de resultados -->
-<a href="getAll.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Usuarios</a>
+<a href="getAllUsuarios.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Usuarios</a>
 <!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">book</i>Ver lista de pacientes</a>-->
 
 <div class ="row"></div>
 <div class="modal-content">
-<f:form action="add.htm" modelAttribute="Pacientes">
+<f:form action="addUsers.htm" modelAttribute="Usuarios">
     
 
         <div class="row">
        <div class="input-field col s4">
         <label for="nickname">Nickname</label>
-          <input type="text" name="nickname" id="nickname" value=""/>
+          <input type="text" name="nombreUsuario" id="nicknameid" value=""/>
        </div>
     
        
        <div class="input-field col s4">
             <label for="password">Contraseña</label>
-          <input type="text" name="password" id="password" value=""/>
+          <input type="text" name="password" id="passwordid" value=""/>
        </div>
     
         <div class="input-field col s4">
-        <label for="rol"></label>
-          <input type="text" name="codRol" id="codRol" value=""/>
+        <label for="rol">Rol</label>
+          <input type="text" name="codRol" id="codRolid" value=""/>
         </div> 
+            
         </div>
         
   
     <div class="row">
         <div class="input-field col s6">
 
-          <input id="codPersona" type="text">
+          <input id="codPersona" name ="codPersona" type="text">
           <label for="codPersona">Código de Persona </label>
         </div>
       </div>
     
-  <button class="btn waves-effect waves-light" type="submit" name="">Guardar Paciente
+  <button class="btn waves-effect waves-light" type="submit" name="">Guardar Usuario
 <!--    <i class="material-icons right">send</i>-->
   </button>
         

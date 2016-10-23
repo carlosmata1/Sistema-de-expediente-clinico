@@ -6,7 +6,6 @@
 package model;
 
 import entity.Pacientes;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
@@ -27,7 +26,8 @@ public List <Pacientes> getAll(){
        s.beginTransaction();
        listaPacientes = s.createCriteria(Pacientes.class).list();
        s.getTransaction().commit();
-        
+       HibernateUtil.getSessionFactory().getCurrentSession().close(); //Se debe cerrar la sesión después de cada transacción
+
     }catch(Exception e){
         e.printStackTrace();
         
@@ -95,7 +95,7 @@ public Pacientes getPacientes (String idAfiliado){
     try{
         s.beginTransaction();
         pac = (Pacientes) s.get(Pacientes.class, idAfiliado);
-        
+        HibernateUtil.getSessionFactory().getCurrentSession().close();
     }catch(Exception e){
         e.printStackTrace();
     }
@@ -109,7 +109,7 @@ public Pacientes getPacientes (String idAfiliado){
         Session s = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
             s.beginTransaction();
-            s.update(p);
+            s.saveOrUpdate(p);
             s.getTransaction().commit();
 
         } catch (Exception e) {

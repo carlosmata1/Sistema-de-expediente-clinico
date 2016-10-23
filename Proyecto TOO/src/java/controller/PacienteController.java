@@ -6,6 +6,7 @@
 package controller;
 
 import entity.Pacientes;
+import java.util.Date;
 import model.PacienteModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,18 +49,18 @@ public class PacienteController {
     
     //Para eliminar
     
-    @RequestMapping(value = "remove", method = RequestMethod.GET)
-    public String remove(@RequestParam(value = "idAfiliado") String idAfiliado, Model m) {
-
-        //java.math.BigDecimal bd = new java.math.BigDecimal(String.valueOf(idAfiliado));
-        PacienteModel model = new PacienteModel();
-        Pacientes e = new Pacientes();
-        e = model.getPacientes(idAfiliado);
-        model.remove(e);
-                    
-
-        return "redirect:getAll.htm";
-    }
+//    @RequestMapping(value = "remove", method = RequestMethod.GET)
+//    public String remove(@RequestParam(value = "idAfiliado") String idAfiliado, Model m) {
+//
+//        //java.math.BigDecimal bd = new java.math.BigDecimal(String.valueOf(idAfiliado));
+//        PacienteModel model = new PacienteModel();
+//        Pacientes e = new Pacientes();
+//        e = model.getPacientes(idAfiliado);
+//        model.remove(e);
+//                    
+//
+//        return "redirect:getAll.htm";
+//    }
     
     //Crear Paciente
      @RequestMapping(value="crear",method = RequestMethod.GET)
@@ -115,30 +116,48 @@ public class PacienteController {
     }
     
     @RequestMapping(value = "update",method=RequestMethod.POST)
-    public String update(@ModelAttribute(value="Pacientes") Pacientes p)
+    public String update(
+    @RequestParam(value = "idAfiliado") String idAfiliado,
+    @RequestParam(value = "nombre") String nombre,
+    @RequestParam(value = "apellido") String apellido,
+    @RequestParam(value = "direccion") String direccion,
+    @RequestParam(value = "profesion") String profesion,
+    @RequestParam(value = "dui") String dui,
+    @RequestParam(value = "fechaNacimiento") Date fechaNacimiento
+    )
+            
     {
         
+        PacienteModel model = new PacienteModel();
         
-       PacienteModel model= new PacienteModel();
-//       DepartamentoModel dpmodel=new DepartamentoModel();
-//       Departamento dp=new Departamento();
-        Pacientes aux= new Pacientes();
-        aux=model.getPacientes(p.getIdAfiliado());
-        aux.setNombre(p.getNombre());
-        aux.setApellido(p.getApellido());
-        aux.setFechaNacimiento(p.getFechaNacimiento());
-        aux.setConyuge(p.getConyuge());
-        aux.setDui(p.getDui());
-        aux.setProfesion(p.getProfesion());
-        aux.setPadre(p.getPadre());
-        aux.setMadre(p.getMadre());
+        Pacientes p = model.getPacientes(idAfiliado);
         
-        aux.setDireccion(p.getDireccion());
-           // aux.setDepartamento(dp);
-        model.edit(aux);
+        p.setNombre(nombre);
+        p.setApellido(apellido);
+        p.setFechaNacimiento(fechaNacimiento);
+       // p.setConyuge(conyuge);
+        p.setDireccion(direccion);
+        p.setDui(dui);
+         p.setProfesion(profesion);
+//        p.setMadre(madre);
+//        p.setPadre(padre);
+        
+        model.edit(p);
+//       PacienteModel model= new PacienteModel();
+
+//       Pacientes aux= new Pacientes();
+//       aux=model.getPacientes(p.getIdAfiliado());
+//        aux.setNombre(p.getNombre());
+//        aux.setApellido(p.getApellido());
+//        aux.setFechaNacimiento(p.getFechaNacimiento());
+//        aux.setConyuge(p.getConyuge());
+//        aux.setDui(p.getDui());
+//        aux.setProfesion(p.getProfesion());
+//        aux.setPadre(p.getPadre());
+//        aux.setMadre(p.getMadre());
+//        
+//        aux.setDireccion(p.getDireccion());
+//        model.edit(aux);
         return "redirect:getAll.htm";
     }
-    
-    
-    
 }

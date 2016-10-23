@@ -39,7 +39,7 @@
           <li><div class="divider"></div></li>
 
           <li class="bold"><a href="principal.htm" class="waves-effect waves-teal"><i class="material-icons">home</i>Inicio</a></li>
-          <li class="bold active"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
+          <li class="bold active"><a href="" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
           <li class="bold"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
@@ -48,7 +48,7 @@
             <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Enfermeras</a></li>
             <li class="bold"><a href="" class="waves-effect waves-teal"><i class="material-icons">create</i>Secretarias</a></li>
             <li class="bold"><a href="clinicas.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Clínicas</a></li>
-            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Salir</a></li>
+            <li class="bold"><a href="index.htm" class="waves-effect waves-teal"><i class="material-icons">create</i>Cerrar Sesión</a></li>
 
           </ul>
 </header>
@@ -76,8 +76,8 @@
 
 <!-- formulario en un modal -->
     <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>
-  <a href="crear.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Usuario</a>
+  <!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>-->
+  <a href="crearUsers.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Usuario</a>
   
 <!-- tabla de resultados -->
 <a href="getAllUsuarios.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Usuarios</a>
@@ -91,6 +91,8 @@
               <th data-field="id">Nickname </th>
               <th data-field="name">Contraseña</th>
               <th data-field="price">Rol</th>
+              <th data-field="price">CodPersona</th>
+              <th data-field="price">Opciones</th>
           </tr>
         </thead>
 
@@ -100,10 +102,11 @@
             <td>${pac.nombreUsuario}</td>
             <td>${pac.password}</td>
             <td>${pac.codRol}</td>
+            <td>${pac.codPersona}</td>
             
             <td>
-            <a href="">Editar </a>
-            <a href="" onclick="return confirm('Are you sure?')"> Eliminar</a>
+            <a href="editUsers.htm?nombreUsuario=${pac.nombreUsuario}">Editar </a>
+            <a href="removeUsers.htm?nombreUsuario=${pac.nombreUsuario}" onclick="return confirm('Are you sure?')"> Eliminar</a>
             </td>
           </tr>        
         </tbody>
