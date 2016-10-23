@@ -88,7 +88,7 @@ public void update(Pacientes p){
     }   
  }
 
-public Pacientes getPacientes (int idAfiliado){
+public Pacientes getPacientes (String idAfiliado){
     Session s = HibernateUtil.getSessionFactory().getCurrentSession();
     Pacientes pac = new Pacientes();
     
@@ -102,6 +102,22 @@ public Pacientes getPacientes (int idAfiliado){
     
     return pac;
 }
+
+//edit
+      public void edit(Pacientes p)
+    {
+        Session s = HibernateUtil.getSessionFactory().getCurrentSession();
+        try {
+            s.beginTransaction();
+            s.update(p);
+            s.getTransaction().commit();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+              s.getTransaction().rollback();
+        }
+    }
     
 }
 

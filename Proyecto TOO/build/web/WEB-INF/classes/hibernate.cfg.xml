@@ -9,5 +9,7 @@
     <property name="hibernate.connection.password">1234</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <mapping class="entity.Pacientes"/>
+    <mapping class="entity.Usuarios"/>
+    <mapping class="entity.Pacientes"/>
   </session-factory>
 </hibernate-configuration>

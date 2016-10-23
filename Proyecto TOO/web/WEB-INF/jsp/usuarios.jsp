@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
   <html>
       
@@ -24,7 +24,7 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Pacientes</title>
+      <title>Usuarios</title>
 </head>
 
    <body>
@@ -39,7 +39,8 @@
           <li><div class="divider"></div></li>
 
           <li class="bold"><a href="principal.htm" class="waves-effect waves-teal"><i class="material-icons">home</i>Inicio</a></li>
-          <li class="bold active"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
+          <li class="bold active"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Usuarios</a></li>
+          <li class="bold"><a href="pacientes2.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Pacientes</a></li>
           <li class="bold"><a href="medicos.htm" class="waves-effect waves-teal"><i class="material-icons">book</i>Médicos</a></li>
 
 
@@ -76,120 +77,10 @@
 <!-- formulario en un modal -->
     <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>
-  <a href="crear.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Pacientes</a>
+  <a href="crear.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Usuario</a>
   
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-
-      <h4>Agregar paciente</h4>
-      <div class="divider"></div>
-      <div class="row">
-    <form class="col s12" action="#">
-      <div class="row">
-        <div class="input-field col s6">
-
-          <input id="name" type="text" class="validate" required="">
-          <label for="name">Nombres</label>
-        </div>
-        <div class="input-field col s6">
-
-          <input id="lastName" type="text" class="validate" required="">
-          <label for="lastName">Apellidos</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="input-field col s6">
-
-           <input type="date" class="datepicker" id="burnDate" required="">
-           <label for="burnDate">Fecha de nacimiento</label>
-        </div>
-        <div class="input-field col s6">
-
-          <input id="icon_telephone" type="tel" class="validate" required="">
-          <label for="icon_telephone">Dirección</label>
-        </div>
-      </div>
-
-      <div class="row">
-         <div class="input-field col s3">
-            <input id="document" type="text" length="10" required="">
-            <label for="document">Identificación </label >
-          </div>
-
-              <div class="input-field col s3">
-              <select required="Falta este campo">
-                <option value="" disabled selected>Elige una opción </option>
-                <option value="1">Masculino</option>
-                <option value="2">Femenino</option>
-
-              </select>
-           <label>Género </label>
-              </div>
-
-        <div class="input-field col s6">
-
-          <input id="profecion" type="tel" class="validate" required="">
-          <label for="profecion">Profecion u oficio</label>
-        </div>
-
-      </div>
-        <div class="row">
-        <div class="input-field col s6">
-
-          <input id="padre" type="text" class="validate" required="">
-          <label for="padre">Nombre del padre</label>
-        </div>
-        <div class="input-field col s6">
-
-          <input id="madre" type="tel" class="validate" required="">
-          <label for="madre">Nombre de la madre</label>
-        </div>
-      </div>
-      <div class="row">
-      <div class="input-field col s6">
-              <select required="Falta este campo">
-                <option value="" disabled selected>Elige una opción </option>
-                <option value="1">Casado</option>
-                <option value="2">Soltero</option>
-                <option value="3">Acompañado </option>s
-                <option value="4">Viudo </option>
-
-
-
-              </select>
-           <label>Estado civil </label>
-              </div>
-
-        <div class="input-field col s6">
-
-          <input id="esposo" type="text" class="validate" >
-          <label for="esposo">Nombre del conyuge</label>
-        </div>
-
-      </div>
-
-
-  <button class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>
-
-    <a href="#!" class=" modal-action modal-close waves-effect #e53935 red darken-1 waves-red btn-flat white-text">Cancelar</a>
-
-    </form>
-  </div>
-
-
-
-    </div>
-    <div class="modal-footer">
-
-    </div>
-  </div>
-
-
-
 <!-- tabla de resultados -->
-<a href="getAll.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Pacientes</a>
+<a href="getAllUsuarios.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Usuarios</a>
 <!--<a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">book</i>Ver lista de pacientes</a>-->
 
 <div class ="row"></div>
@@ -197,25 +88,22 @@
 <table class="highlight centered">
         <thead>
           <tr>
-              <th data-field="id">ID </th>
-              <th data-field="name">Nombre</th>
-              <th data-field="price">Apellido</th>
-              <th data-field="price">Dirección</th>
-              <th data-field="price">Opciones</th>
+              <th data-field="id">Nickname </th>
+              <th data-field="name">Contraseña</th>
+              <th data-field="price">Rol</th>
           </tr>
         </thead>
 
-        <c:forEach items ="${listaPacientes}" var ="pac">
+        <c:forEach items ="${listaUsuarios}" var ="pac">
         <tbody>
           <tr>
-            <td>${pac.idAfiliado}</td>
-            <td>${pac.nombre}</td>
-            <td>${pac.apellido}</td>
-            <td>${pac.direccion}</td>
+            <td>${pac.nombreUsuario}</td>
+            <td>${pac.password}</td>
+            <td>${pac.codRol}</td>
             
             <td>
-            <a href="edit.htm?idAfiliado=${pac.idAfiliado}">Editar </a>
-            <a href="remove.htm?id=${pac.idAfiliado}" onclick="return confirm('Are you sure?')"> Eliminar</a>
+            <a href="">Editar </a>
+            <a href="" onclick="return confirm('Are you sure?')"> Eliminar</a>
             </td>
           </tr>        
         </tbody>
@@ -246,4 +134,5 @@
 
 </body>
 </html>
+
 

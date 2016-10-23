@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/web/WEB-INF/jsp/pacientes2.jsp</file>
-            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/src/java/model/PacienteModel.java</file>
+            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/web/WEB-INF/jsp/crearUsuario.jsp</file>
+            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/web/WEB-INF/jsp/usuarios.jsp</file>
+            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/web/WEB-INF/jsp/index.jsp</file>
             <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/web/WEB-INF/jsp/crearPacientes.jsp</file>
-            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/src/java/entity/Pacientes.java</file>
-            <file>file:/C:/Users/Daniel/Desktop/Proyecto%20TOO/src/java/controller/PacienteController.java</file>
         </group>
     </open-files>
 </project-private>

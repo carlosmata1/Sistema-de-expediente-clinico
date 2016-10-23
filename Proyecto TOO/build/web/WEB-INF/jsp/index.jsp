@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="f" uri="http://www.springframework.org/tags/form"  %>
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 <!-- fksdfksdj-->
@@ -71,7 +73,9 @@
 
   <div id="login-page" class="row">
     <div class="col m12 z-depth-4 card-panel pull-m10">
-      <form class="login-form">
+        
+       <!--Inicio del Formulario-->
+      <f:form actio="validacion.htm" class="login-form" modelAttribute="Usuarios">
         <div class="row">
           <div class="input-field col s12 center">
             <!--<img src=" Images/logo1.png" alt="" class="circle responsive-img valign profile-image-login>-->
@@ -102,24 +106,51 @@
         <div class="row">
           <div class="input-field col s12">
             <a href="principal.htm" class="btn waves-effect waves-light col s12">Iniciar Sesión</a>
+            <br>
+            
           </div>
         </div>
-          <div class="row">
-        <!--<div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="http://demo.geekslabs.com/materialize/v3.1/page-register.html">Register Now!</a></p>
-          </div>
-          <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="http://demo.geekslabs.com/materialize/v3.1/page-forgot-password.html">Forgot password ?</a></p>
-          </div>
-        </div>-->
-
-      </form>
+         
+      <button class="btn waves-effect waves-light" type="submit" name=""> Iniciar Sesión </button>
+      </f:form>
+      
+     
+        
+       
+        
+        
     </div>
   </div>
 </div>
+<div class="container">
+<table class="highlight centered">
+        <thead>
+          <tr>
+              <th data-field="id">Nickname </th>
+              <th data-field="name">Contraseña</th>
+              <th data-field="price">Rol</th>
+          </tr>
+        </thead>
+        
+       
+<s:forEach items ="${listaUsuarios}" var ="pac">
+        <tbody>
+          <tr>
+            <td>${pac.nombreUsuario}</td>
+            <td>${pac.password}</td>
+            <td>${pac.codRol}</td>
+            
+            <td>
+            <a href="">Editar </a>
+            <a href="" onclick="return confirm('Are you sure?')"> Eliminar</a>
+            </td>
+          </tr>        
+        </tbody>
+        </s:forEach>
+</table>
+</div>
 
-
-
+<a href="getAllUsers.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Ver Usuarios</a>
   <!-- ================================================
     Scripts
     ================================================ -->

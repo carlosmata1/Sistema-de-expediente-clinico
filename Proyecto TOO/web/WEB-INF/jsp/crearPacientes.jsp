@@ -288,7 +288,14 @@
       </div>-->
    
     <!--<button class="btn waves-effect waves-light" type="submit" name="action">Guardar</button>-->
-           
+       
+     
+    
+       
+  <button class="btn waves-effect waves-light" type="submit" name="">Guardar Paciente
+<!--    <i class="material-icons right">send</i>-->
+  </button>
+        
        <input type="submit" value="Guardar Paciente"/>
    </f:form>
 </div>

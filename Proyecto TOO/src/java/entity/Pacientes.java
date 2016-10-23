@@ -1,5 +1,5 @@
 package entity;
-// Generated 20-oct-2016 23:37:15 by Hibernate Tools 4.3.1
+// Generated 22-oct-2016 15:48:58 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -21,17 +21,16 @@ public class Pacientes  implements java.io.Serializable {
 
 
      private String idAfiliado;
-     private String nombre;
      private String apellido;
-     private Date fechaNacimiento;
      private String conyuge;
      private String direccion;
      private String dui;
-     private String profesion;
      private String estadoCivil;
-     private String padre;
+     private Date fechaNacimiento;
      private String madre;
-     private String genero;
+     private String nombre;
+     private String padre;
+     private String profesion;
 
     public Pacientes() {
     }
@@ -41,18 +40,18 @@ public class Pacientes  implements java.io.Serializable {
         this.idAfiliado = idAfiliado;
         this.estadoCivil = estadoCivil;
     }
-    public Pacientes(String idAfiliado, String nombre, String apellido, Date fechaNacimiento, String conyuge, String direccion, String dui, String profesion, String estadoCivil, String padre, String madre) {
+    public Pacientes(String idAfiliado, String apellido, String conyuge, String direccion, String dui, String estadoCivil, Date fechaNacimiento, String madre, String nombre, String padre, String profesion) {
        this.idAfiliado = idAfiliado;
-       this.nombre = nombre;
        this.apellido = apellido;
-       this.fechaNacimiento = fechaNacimiento;
        this.conyuge = conyuge;
        this.direccion = direccion;
        this.dui = dui;
-       this.profesion = profesion;
        this.estadoCivil = estadoCivil;
-       this.padre = padre;
+       this.fechaNacimiento = fechaNacimiento;
        this.madre = madre;
+       this.nombre = nombre;
+       this.padre = padre;
+       this.profesion = profesion;
     }
    
      @Id 
@@ -68,16 +67,6 @@ public class Pacientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="NOMBRE", length=50)
-    public String getNombre() {
-        return this.nombre;
-    }
-    
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    
     @Column(name="APELLIDO", length=30)
     public String getApellido() {
         return this.apellido;
@@ -85,16 +74,6 @@ public class Pacientes  implements java.io.Serializable {
     
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    @Temporal(TemporalType.DATE)
-    @Column(name="FECHA_NACIMIENTO", length=7)
-    public Date getFechaNacimiento() {
-        return this.fechaNacimiento;
-    }
-    
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
     }
 
     
@@ -128,16 +107,6 @@ public class Pacientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="PROFESION", length=20)
-    public String getProfesion() {
-        return this.profesion;
-    }
-    
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
-    }
-
-    
     @Column(name="ESTADO_CIVIL", nullable=false, length=35)
     public String getEstadoCivil() {
         return this.estadoCivil;
@@ -145,6 +114,36 @@ public class Pacientes  implements java.io.Serializable {
     
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
+    }
+
+    @Temporal(TemporalType.DATE)
+    @Column(name="FECHA_NACIMIENTO", length=7)
+    public Date getFechaNacimiento() {
+        return this.fechaNacimiento;
+    }
+    
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    
+    @Column(name="MADRE", length=20)
+    public String getMadre() {
+        return this.madre;
+    }
+    
+    public void setMadre(String madre) {
+        this.madre = madre;
+    }
+
+    
+    @Column(name="NOMBRE", length=50)
+    public String getNombre() {
+        return this.nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     
@@ -158,13 +157,13 @@ public class Pacientes  implements java.io.Serializable {
     }
 
     
-    @Column(name="MADRE", length=20)
-    public String getMadre() {
-        return this.madre;
+    @Column(name="PROFESION", length=20)
+    public String getProfesion() {
+        return this.profesion;
     }
     
-    public void setMadre(String madre) {
-        this.madre = madre;
+    public void setProfesion(String profesion) {
+        this.profesion = profesion;
     }
 
 

@@ -76,7 +76,7 @@
 <!-- formulario en un modal -->
     <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger #ffd600 yellow accent-4"  href="#modal1" id="addbuton"><i class="material-icons left ">person_add</i>Agregar paciente</a>
-  <a href="crear.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Pacientes 2</a>
+  <a href="crear.htm" class="waves-effect waves-teal btn"><i class="material-icons">book</i>Crear Pacientes</a>
   
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -214,25 +214,10 @@
             <td>${pac.direccion}</td>
             
             <td>
-            <a href="edit.htm?id=${pac.idAfiliado}">Editar </a>
+            <a href="edit.htm?idAfiliado=${pac.idAfiliado}">Editar </a>
             <a href="remove.htm?id=${pac.idAfiliado}" onclick="return confirm('Are you sure?')"> Eliminar</a>
             </td>
-          </tr>
-          
-<!--          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>6754315-1</td>
-            <td>24/2/1998</td>
-
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>6543245-7</td>
-            <td>24/2/1998</td>
-          </tr>-->
-        
+          </tr>        
         </tbody>
         </c:forEach>
       </table>

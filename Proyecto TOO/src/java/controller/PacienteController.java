@@ -49,7 +49,7 @@ public class PacienteController {
     //Para eliminar
     
     @RequestMapping(value = "remove", method = RequestMethod.GET)
-    public String remove(@RequestParam(value = "idAfiliado") int idAfiliado, Model m) {
+    public String remove(@RequestParam(value = "idAfiliado") String idAfiliado, Model m) {
 
         //java.math.BigDecimal bd = new java.math.BigDecimal(String.valueOf(idAfiliado));
         PacienteModel model = new PacienteModel();
@@ -87,7 +87,55 @@ public class PacienteController {
         
         PacienteModel model=new PacienteModel();
         model.create(p);
+        int a=0;
+        if(a==0){
+        return "redirect:getAll.htm";
+        }
+         return "index";
         
+    }
+    
+    @RequestMapping(value="edit",method = RequestMethod.GET)
+    public String edit(@RequestParam(value="idAfiliado") String idAfiliado, Model m)
+    {
+        //java.math.BigDecimal bd=new java.math.BigDecimal(String.valueOf(idAfiliado));
+        PacienteModel model= new PacienteModel();
+       
+        Pacientes p =new Pacientes();
+//        Departamento dp=new Departamento();
+//        DepartamentoModel dpModel= new DepartamentoModel();
+        p=model.getPacientes(idAfiliado); //Se obtiene el paciente segun si Id que es un String
+//        dp=dpModel.getDepartamento(p.getDepartamento().getId());
+        
+        m.addAttribute("p",p);
+        //m.addAttribute("d", dp);
+      //  m.addAttribute("d",p.getDepartamento());
+        
+        return "editarPacientes"; //pagina a donde llegará
+    }
+    
+    @RequestMapping(value = "update",method=RequestMethod.POST)
+    public String update(@ModelAttribute(value="Pacientes") Pacientes p)
+    {
+        
+        
+       PacienteModel model= new PacienteModel();
+//       DepartamentoModel dpmodel=new DepartamentoModel();
+//       Departamento dp=new Departamento();
+        Pacientes aux= new Pacientes();
+        aux=model.getPacientes(p.getIdAfiliado());
+        aux.setNombre(p.getNombre());
+        aux.setApellido(p.getApellido());
+        aux.setFechaNacimiento(p.getFechaNacimiento());
+        aux.setConyuge(p.getConyuge());
+        aux.setDui(p.getDui());
+        aux.setProfesion(p.getProfesion());
+        aux.setPadre(p.getPadre());
+        aux.setMadre(p.getMadre());
+        
+        aux.setDireccion(p.getDireccion());
+           // aux.setDepartamento(dp);
+        model.edit(aux);
         return "redirect:getAll.htm";
     }
     

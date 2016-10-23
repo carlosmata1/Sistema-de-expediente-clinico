@@ -41,4 +41,9 @@ public class controlador {
     public String clinicas(){
         return "clinicas";
     }
+    
+  @RequestMapping(value="/usuarios.htm", method=RequestMethod.GET)
+    public String usuarios(){
+        return "usuarios";
+    }
 }
