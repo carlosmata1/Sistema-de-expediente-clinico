@@ -1,8 +1,8 @@
-<jsp:include page="plantilla head.jsp"></jsp:include>
+<jsp:include page="plantillaHead.jsp"/>
 <title>Médicos</title>
-</head>
 
-   <body>
+
+   
 
 
 <!--Barra Lateral-->

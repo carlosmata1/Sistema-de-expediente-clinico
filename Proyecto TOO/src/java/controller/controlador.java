@@ -37,4 +37,8 @@ public class controlador {
     public String clinicas(){
         return "clinicas";
     }
+    @RequestMapping(value="/signosvitales.htm",method=RequestMethod.GET)
+    public String signos(){
+        return "Svitales";
+    }
 }

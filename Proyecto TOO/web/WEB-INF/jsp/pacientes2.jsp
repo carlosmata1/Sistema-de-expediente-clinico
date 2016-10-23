@@ -210,15 +210,15 @@
           <tr>
               
             <td>${pac.persona.codPersona}</td>
+          <td>${listaPersonas.getPersonas(pac.persona.codPersona).apellido}</td>
           <td>${listaPersonas.getPersonas(pac.persona.codPersona).nombre}</td>
-            
-           
+          <td>${listaPersonas.getPersonas(pac.persona.codPersona).genero}</td> 
          
             
             
             <td>
-            <a href="edit.htm?id=${pac.idAfiliado}">Editar </a>
-            <a href="remove.htm?id=${pac.idAfiliado}" onclick="return confirm('Are you sure?')"> Eliminar</a>
+            <a href="edit.htm?idAfiliado=${pac.idAfiliado}">Editar </a>
+            <a href="remove.htm?idAfiliado=${pac.idAfiliado}" onclick="return confirm('Are you sure?')"> Eliminar</a>
             </td>
           </tr>
           

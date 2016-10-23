@@ -91,7 +91,7 @@ public void update(Paciente p){
 public Paciente getPacientes (BigDecimal idAfiliado){
     List <Paciente> listaPacientes = this.getAll();
     for(Paciente paciente:listaPacientes){
-        if(paciente.idAfiliado==idAfiliado)
+        if(paciente.idAfiliado.equals(idAfiliado))
             return paciente;
     }
     
