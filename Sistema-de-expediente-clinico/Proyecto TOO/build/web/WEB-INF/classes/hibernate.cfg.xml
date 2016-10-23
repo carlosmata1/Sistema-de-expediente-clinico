@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+     
+      <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+      <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+    <property name="hibernate.connection.username">system</property>
+    <property name="hibernate.connection.password">Mujeres15</property>
+    <mapping class="entity.Paciente"/>
+    <mapping class="entity.Medicamento"/>
+    <mapping class="entity.Departamento"/>
+    <mapping class="entity.Persona"/>
+    <mapping class="entity.Rol"/>
+    <mapping class="entity.Clinica"/>
+    <mapping class="entity.Receta"/>
+    <mapping class="entity.Empleado"/>
+    <mapping class="entity.Medico"/>
+    <mapping class="entity.Expediente"/>
+    <mapping class="entity.Especialidad"/>
+    <mapping class="entity.Usuario"/>
+    <mapping class="entity.Signosvitales"/>
+    <mapping class="entity.Municipio"/>
+  </session-factory>
+</hibernate-configuration>
